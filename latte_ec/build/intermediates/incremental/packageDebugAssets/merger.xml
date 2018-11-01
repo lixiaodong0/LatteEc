@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="C:\Users\Administrator\Desktop\Github\LatteEcExample\latte_ec\src\main\assets"><file name="iconfont.ttf" path="C:\Users\Administrator\Desktop\Github\LatteEcExample\latte_ec\src\main\assets\iconfont.ttf"/></source><source path="C:\Users\Administrator\Desktop\Github\LatteEcExample\latte_ec\build\generated\assets\shaders\debug"/></dataSet><dataSet config="debug"><source path="C:\Users\Administrator\Desktop\Github\LatteEcExample\latte_ec\src\debug\assets"/></dataSet></merger>

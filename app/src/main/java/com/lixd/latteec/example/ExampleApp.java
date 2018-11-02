@@ -3,7 +3,7 @@ package com.lixd.latteec.example;
 import android.app.Application;
 
 import com.joanzapata.iconify.fonts.FontAwesomeModule;
-import com.lixd.latte.core.Latte;
+import com.lixd.latte.core.app.Latte;
 import com.lixd.latte.ec.icon.EcFontModule;
 
 public class ExampleApp extends Application {

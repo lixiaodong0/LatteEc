@@ -27,13 +27,15 @@ public interface RestService {
     @POST
     Call<String> post(@Url String url, @FieldMap WeakHashMap<String, Object> params);
 
-    @FormUrlEncoded
     @POST
     Call<String> postRaw(@Url String url, @Body RequestBody body);
 
     @FormUrlEncoded
     @PUT
     Call<String> put(@Url String url, @FieldMap WeakHashMap<String, Object> params);
+
+    @POST
+    Call<String> putRaw(@Url String url, @Body RequestBody body);
 
     @GET
     Call<String> delete(@Url String url, @QueryMap WeakHashMap<String, Object> params);
@@ -44,5 +46,5 @@ public interface RestService {
 
     @Streaming
     @GET
-    Call<ResponseBody> download(@Url String url);
+    Call<ResponseBody> download(@Url String url,@QueryMap WeakHashMap<String, Object> params);
 }

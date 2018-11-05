@@ -21,6 +21,7 @@ public class ExampleDelegate extends LatteDelegate {
         RestClient.builder()
                 .url("https://www.baidu.com/?tn=news")
                 .loader(getContext())
+                .download("latte_download", "latte", "apk")
                 .onRequest(new IRequest() {
                     @Override
                     public void onRequestStart() {
@@ -35,7 +36,7 @@ public class ExampleDelegate extends LatteDelegate {
                 .success(new ISuccess() {
                     @Override
                     public void onSuccess(String response) {
-//                        Toast.makeText(_mActivity, "" + response, Toast.LENGTH_SHORT).show();
+                        //                        Toast.makeText(_mActivity, "" + response, Toast.LENGTH_SHORT).show();
                     }
                 })
                 .error(new IError() {
@@ -51,6 +52,6 @@ public class ExampleDelegate extends LatteDelegate {
                     }
                 })
                 .build()
-                .get();
+                .download();
     }
 }

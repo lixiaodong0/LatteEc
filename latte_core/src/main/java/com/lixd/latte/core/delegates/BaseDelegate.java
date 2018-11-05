@@ -23,6 +23,8 @@ public abstract class BaseDelegate extends SupportFragment {
             rootView = inflater.inflate((int) getLayout(), container, false);
         } else if (getLayout() instanceof View) {
             rootView = (View) getLayout();
+        } else {
+            throw new ClassCastException("getLayout type int & View");
         }
 
         if (rootView != null) {

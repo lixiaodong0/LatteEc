@@ -6,10 +6,14 @@ import com.joanzapata.iconify.Iconify;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import okhttp3.Interceptor;
+
 public class Configurator {
     private static final HashMap<String, Object> LATTE_CONIFGS = new HashMap<>();
 
     private static final ArrayList<IconFontDescriptor> ICONS = new ArrayList<>();
+
+    private static final ArrayList<Interceptor> INTERCEPTORS = new ArrayList<>();
 
     private Configurator() {
         LATTE_CONIFGS.put(ConfigType.CONFIG_READY.name(), false);
@@ -37,6 +41,17 @@ public class Configurator {
         return this;
     }
 
+    public final Configurator withInterceptor(Interceptor interceptor) {
+        INTERCEPTORS.add(interceptor);
+        LATTE_CONIFGS.put(ConfigType.INTERCEPTORS.name(), INTERCEPTORS);
+        return this;
+    }
+
+    public final Configurator withInterceptors(ArrayList<Interceptor> interceptors) {
+        INTERCEPTORS.addAll(interceptors);
+        LATTE_CONIFGS.put(ConfigType.INTERCEPTORS.name(), INTERCEPTORS);
+        return this;
+    }
 
     private final void initIconify() {
         if (ICONS.size() > 0) {

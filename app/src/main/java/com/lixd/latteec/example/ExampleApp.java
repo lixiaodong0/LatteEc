@@ -4,6 +4,7 @@ import android.app.Application;
 
 import com.joanzapata.iconify.fonts.FontAwesomeModule;
 import com.lixd.latte.core.app.Latte;
+import com.lixd.latte.core.net.interceptors.DebugInterceptor;
 import com.lixd.latte.ec.icon.EcFontModule;
 
 public class ExampleApp extends Application {
@@ -13,6 +14,7 @@ public class ExampleApp extends Application {
         super.onCreate();
 
         Latte.init(this)
+                .withInterceptor(new DebugInterceptor("index", 0))
                 .withApiHost("http://www.baidu.com")
                 .withIcon(new FontAwesomeModule())
                 .withIcon(new EcFontModule())
